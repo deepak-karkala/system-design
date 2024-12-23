@@ -4,7 +4,8 @@
 * [Code Repository](https://github.com/deepak-karkala/system-design)
 * [Personal Portfolio](https://deepak-karkala.github.io/blog/)
 
-
+<!--
 ## Docs
 
-* [Parking Lot](parking_lot.md)
+* [Parking Lot](SUMMARY.md)
+-->
