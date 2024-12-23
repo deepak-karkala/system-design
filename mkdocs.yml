@@ -1,7 +1,65 @@
 site_name: System Design
 nav:
   - Home: index.md
-  - About: about.md
-theme: material
+  #- Code Reference: 
+  #  - Parking Lot:
+  #    - Parking Spot: reference/parking_lot/src/parking_spot.md
+  - Code Reference: reference/
+theme:
+  name: material
+  #font:
+  #  text: Lora
+  features:
+    - search.suggest
+    - search.highlight
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - toc.follow
+  palette:
+    scheme: default
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/home
+  favicon: images/favicon.png
+  palette: 
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch 
+        name: Switch to dark mode
+      primary: black
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+      primary: black
 plugins:
+  - search
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - section-index
   - mkdocstrings
+  - tags
+repo_url: https://github.com/deepak-karkala/system-design
+repo_name: deepak-karkala/system-design
+copyright: Copyright &copy; 2024 Deepak Karkala
+extra:
+  social:
+    - icon: material/web
+      link: https://deepak-karkala.github.io/blog/
+    - icon: fontawesome/brands/github
+      link: https://github.com/deepak-karkala/portfolio
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/deepak_karkala
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/deepak-karkala-3465684b
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/techabstractions/
+markdown_extensions:
+  - toc:
+      permalink: true
+
