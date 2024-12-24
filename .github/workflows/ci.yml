@@ -29,5 +29,6 @@ jobs:
                 mkdocs-material[imaging] \
                 mkdocstrings \
                 mkdocs-literate-nav \
+                mkdocs-section-index \
                 mkdocstrings[python]
       - run: mkdocs gh-deploy --force
