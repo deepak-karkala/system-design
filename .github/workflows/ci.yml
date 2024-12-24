@@ -28,5 +28,6 @@ jobs:
       - run: pip install \
                 mkdocs-material[imaging] \
                 mkdocstrings \
+                mkdocs-literate-nav \
                 mkdocstrings[python]
       - run: mkdocs gh-deploy --force
