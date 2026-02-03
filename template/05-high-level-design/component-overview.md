@@ -191,12 +191,58 @@ Sticky Sessions:
 1. Edge Gateway (External API):
    Internet → Gateway → Internal Services
 
+   Purpose: Single entry point for all external traffic
+   - Handles public API requests
+   - Performs authentication/authorization
+   - Rate limiting per client/API key
+   - SSL termination
+   - Request routing to appropriate microservices
+
+   Use When:
+   - Building public-facing APIs
+   - Need centralized security and monitoring
+   - Want to hide internal architecture from clients
+
+   Example: All external clients hit api.company.com which routes
+   to order-service, user-service, payment-service internally
+
 2. Internal Gateway (Service Mesh):
    Service A → Gateway → Service B
+
+   Purpose: Manage service-to-service communication
+   - Service discovery and load balancing
+   - Circuit breaking and retries
+   - Mutual TLS between services
+   - Observability (tracing, metrics)
+   - Traffic shaping and canary deployments
+
+   Use When:
+   - Many microservices communicating
+   - Need resilience patterns (circuit breakers)
+   - Require service-level security and monitoring
+
+   Example: Order service calls payment service through mesh,
+   which handles retries, timeouts, and load balancing automatically
 
 3. Backend for Frontend (BFF):
    Web App  → Web Gateway  → Services
    Mobile   → Mobile Gateway → Services
+
+   Purpose: Dedicated gateway per client type
+   - Aggregates multiple service calls into one
+   - Transforms data for specific client needs
+   - Optimizes payload size (mobile gets smaller responses)
+   - Different authentication flows per platform
+   - Client-specific caching strategies
+
+   Use When:
+   - Web and mobile have different data needs
+   - Want to avoid "fat" APIs with unused fields
+   - Each platform has unique requirements
+   - Need to optimize for bandwidth/latency per client
+
+   Example: Mobile BFF returns thumbnail images and paginated data,
+   while Web BFF returns full images and larger data sets
 ```
 
 ### API Gateway Options
